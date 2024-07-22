@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,15 +14,68 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thK-vw-SGT">
+                                <rect key="frame" x="63" y="282" width="267" height="288"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kueski" translatesAutoresizingMaskIntoConstraints="NO" id="zBO-27-NoC">
+                                        <rect key="frame" x="0.0" y="42" width="240" height="285"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlO-3A-ONH">
+                                        <rect key="frame" x="10" y="0.0" width="220" height="198"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="70"/>
+                                        <color key="textColor" systemColor="systemOrangeColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRm-Ih-CPz">
+                                        <rect key="frame" x="165" y="109" width="102" height="86"/>
+                                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="70"/>
+                                        <color key="textColor" name="AccentColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="zBO-27-NoC" firstAttribute="leading" secondItem="thK-vw-SGT" secondAttribute="leading" id="3Vo-Q6-EhG"/>
+                                    <constraint firstItem="AlO-3A-ONH" firstAttribute="centerY" secondItem="thK-vw-SGT" secondAttribute="centerY" constant="-45" id="DI2-xI-zO1"/>
+                                    <constraint firstItem="zBO-27-NoC" firstAttribute="top" secondItem="thK-vw-SGT" secondAttribute="top" constant="42" id="DaX-kB-KEX"/>
+                                    <constraint firstItem="AlO-3A-ONH" firstAttribute="top" secondItem="thK-vw-SGT" secondAttribute="top" id="Jhe-FQ-dtj"/>
+                                    <constraint firstItem="zBO-27-NoC" firstAttribute="centerX" secondItem="thK-vw-SGT" secondAttribute="centerX" constant="-13.5" id="STg-OX-76R"/>
+                                    <constraint firstItem="gRm-Ih-CPz" firstAttribute="centerX" secondItem="thK-vw-SGT" secondAttribute="centerX" constant="82.5" id="ddd-X7-kDn"/>
+                                    <constraint firstItem="AlO-3A-ONH" firstAttribute="leading" secondItem="thK-vw-SGT" secondAttribute="leading" constant="10" id="i7o-xD-2Dk"/>
+                                    <constraint firstItem="AlO-3A-ONH" firstAttribute="centerX" secondItem="thK-vw-SGT" secondAttribute="centerX" constant="-13.5" id="iYh-iC-wbY"/>
+                                    <constraint firstItem="gRm-Ih-CPz" firstAttribute="centerY" secondItem="thK-vw-SGT" secondAttribute="centerY" constant="8" id="im5-CA-Pam"/>
+                                    <constraint firstItem="zBO-27-NoC" firstAttribute="centerY" secondItem="thK-vw-SGT" secondAttribute="centerY" constant="40.5" id="zAv-2j-IoF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="thK-vw-SGT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="63" id="WdU-Td-LYs"/>
+                            <constraint firstItem="thK-vw-SGT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cc3-5C-jJB"/>
+                            <constraint firstItem="thK-vw-SGT" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="m5y-hf-pyZ"/>
+                            <constraint firstItem="thK-vw-SGT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="223" id="sjy-Da-Xl6"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="kueski" width="400" height="400"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
