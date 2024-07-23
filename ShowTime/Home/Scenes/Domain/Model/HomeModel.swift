@@ -19,7 +19,7 @@ struct Movie: Codable, Identifiable {
     let posterPath: String?
     let releaseDate: String
     let title: String
- 
+    
     
     enum CodingKeys: String, CodingKey {
         case adult
@@ -30,17 +30,17 @@ struct Movie: Codable, Identifiable {
         case posterPath = "poster_path"
         case releaseDate = "release_date"
         case title
-      
+        
     }
     
-        init(entity: MovieEntity) {
-            self.title = entity.title ?? ""
-            self.posterPath = entity.imageUrl
-            self.overview = entity.overview ?? ""
-            self.releaseDate = entity.releaseDate ?? ""
-            self.popularity = entity.popularity
-            self.id = Int(entity.id)
-            self.backdropPath = entity.backdropPath
-            self.adult = entity.adult
-        }
+    init(entity: MovieEntity) {
+        self.title = entity.title ?? ""
+        self.posterPath = entity.imageUrl
+        self.overview = entity.overview ?? ""
+        self.releaseDate = entity.releaseDate ?? ""
+        self.popularity = entity.popularity
+        self.id = Int(entity.id)
+        self.backdropPath = entity.backdropPath
+        self.adult = entity.adult
+    }
 }

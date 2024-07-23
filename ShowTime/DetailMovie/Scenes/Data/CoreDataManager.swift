@@ -12,9 +12,8 @@ final class CoreDataManager {
     
     private init() {}
     
-    // Persistent Container
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "MovieModel") // Nombre del archivo .xcdatamodeld
+        let container = NSPersistentContainer(name: "MovieModel")
         container.loadPersistentStores { description, error in
             if let error = error as NSError? {
                 fatalError("Failed to load Core Data stack: \(error), \(error.userInfo)")
@@ -23,12 +22,10 @@ final class CoreDataManager {
         return container
     }()
     
-    // Context
     var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
     
-    // Save Context
     func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {

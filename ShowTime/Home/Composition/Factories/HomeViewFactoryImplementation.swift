@@ -22,7 +22,7 @@ final class HomeViewFactoryImp: HomeViewControllerFactory {
     func makeDetailMovieViewController(movie: Movie) -> DetailMovieView {
         print(navigationController)
         let favoriteMovieRepository = FavoriteMovieRepositoryImpl(coreDataManager: CoreDataManager.shared)
-
+        
         let viewModel = DetailMovieViewModel(movie: movie, favoriteMovieRepository: favoriteMovieRepository)
         return DetailMovieView(viewModel: viewModel, favoriteMovieRepository: favoriteMovieRepository)
     }

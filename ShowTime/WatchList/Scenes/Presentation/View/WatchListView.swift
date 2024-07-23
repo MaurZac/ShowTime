@@ -39,8 +39,8 @@ final class WatchlistView: UIViewController, UICollectionViewDelegate {
             let layout = UICollectionViewFlowLayout()
             layout.scrollDirection = .vertical
             let screenWidth = UIScreen.main.bounds.width
-            let itemWidth = (screenWidth - 24) / 2 // Ajusta el ancho para dos celdas por fila
-            layout.itemSize = CGSize(width: itemWidth, height: 200 + 40) // Altura fija para la imagen + espacio para el título
+            let itemWidth = (screenWidth - 24) / 2
+            layout.itemSize = CGSize(width: itemWidth, height: 200 + 40)
             layout.minimumInteritemSpacing = 8
             layout.minimumLineSpacing = 8
             self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -68,7 +68,6 @@ final class WatchlistView: UIViewController, UICollectionViewDelegate {
             view.addSubview(titleLabel)
             view.addSubview(collectionView)
             
-            // Set up constraints
             collectionView.translatesAutoresizingMaskIntoConstraints = false
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([

@@ -25,7 +25,7 @@ final class HomeViewController: UIViewController, UISearchBarDelegate, UIScrollV
     var coordinator: HomeViewCoordinator?
     private var viewControllerFactory: HomeViewControllerFactory!
     private var collectionViewStyle: CollectionViewStyle = .grid
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,17 +134,17 @@ final class HomeViewController: UIViewController, UISearchBarDelegate, UIScrollV
         view.addSubview(collectionView)
         
         let secondLayout = UICollectionViewFlowLayout()
-          secondLayout.scrollDirection = .vertical
-          secondLayout.sectionInset = UIEdgeInsets(top: 8, left: 12, bottom: 0, right: 12)
-          secondLayout.minimumInteritemSpacing = 8
-          secondLayout.minimumLineSpacing = 8
-
-          secondCollectionView = UICollectionView(frame: .zero, collectionViewLayout: secondLayout)
-          secondCollectionView.dataSource = self
-          secondCollectionView.delegate = self
-          secondCollectionView.register(MovieCell.self, forCellWithReuseIdentifier: "MovieCell")
-          secondCollectionView.translatesAutoresizingMaskIntoConstraints = false
-          view.addSubview(secondCollectionView)
+        secondLayout.scrollDirection = .vertical
+        secondLayout.sectionInset = UIEdgeInsets(top: 8, left: 12, bottom: 0, right: 12)
+        secondLayout.minimumInteritemSpacing = 8
+        secondLayout.minimumLineSpacing = 8
+        
+        secondCollectionView = UICollectionView(frame: .zero, collectionViewLayout: secondLayout)
+        secondCollectionView.dataSource = self
+        secondCollectionView.delegate = self
+        secondCollectionView.register(MovieCell.self, forCellWithReuseIdentifier: "MovieCell")
+        secondCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(secondCollectionView)
         
         NSLayoutConstraint.activate([
             
@@ -167,7 +167,7 @@ final class HomeViewController: UIViewController, UISearchBarDelegate, UIScrollV
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: 220),
-
+            
             nowPlaying.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 8),
             nowPlaying.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             
@@ -187,11 +187,11 @@ final class HomeViewController: UIViewController, UISearchBarDelegate, UIScrollV
             .store(in: &cancellables)
         
         viewModel.$filteredNowPlaying
-                .receive(on: DispatchQueue.main)
-                .sink { [weak self] _ in
-                    self?.secondCollectionView.reloadData()
-                }
-                .store(in: &cancellables)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.secondCollectionView.reloadData()
+            }
+            .store(in: &cancellables)
         
         viewModel.$searchText
             .sink { [weak self] searchText in
@@ -219,7 +219,7 @@ final class HomeViewController: UIViewController, UISearchBarDelegate, UIScrollV
         lastContentOffset = scrollView.contentOffset.y
         view.endEditing(true)
     }
-
+    
 }
 
 // MARK: - UICollectionViewDataSource
@@ -265,7 +265,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 let itemHeight: CGFloat = 250
                 return CGSize(width: itemWidth, height: itemHeight)
             case .list:
-                return CGSize(width: collectionViewWidth - 32, height: 150) // Ajusta el alto según lo desees
+                return CGSize(width: collectionViewWidth - 32, height: 150) 
             }
         }
         return CGSize.zero

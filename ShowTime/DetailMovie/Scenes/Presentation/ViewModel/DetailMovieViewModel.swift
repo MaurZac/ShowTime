@@ -12,7 +12,7 @@ final class DetailMovieViewModel {
     // MARK: - Properties
     let movie: Movie
     private let favoriteMovieRepository: FavoriteMovieRepository
-
+    
     @Published var movieTitle: String
     @Published var posterImage: UIImage?
     @Published var overview: String
@@ -45,8 +45,8 @@ final class DetailMovieViewModel {
     }
     
     func addMovieToFavorites() {
-            favoriteMovieRepository.save(movie: movie)
-        }
+        favoriteMovieRepository.save(movie: movie)
+    }
     
     private func loadPosterImage(from urlString: String) {
         guard let url = URL(string: urlString) else {
@@ -80,15 +80,5 @@ final class DetailMovieViewModel {
         return Int(round(starRating))
     }
     
-//    func toggleFavorite() {
-//        if Self.favoriteMovies.contains(movie) {
-//            Self.favoriteMovies.remove(movie)
-//        } else {
-//            Self.favoriteMovies.insert(movie)
-//        }
-//    }
-//    
-//    static func getFavoriteMovies() -> [Movie] {
-//        return Array(favoriteMovies)
-//    }
+    
 }
